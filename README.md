@@ -27,7 +27,8 @@ Used to convert RegisterViewModel.cs model to User.cs
         }
         public User Login(string userName) 
         { 
-            User retUser = Repository.Users.FirstOrDefault(p => string.Compare(p.Email, userName, true) == 0); 
+            User retUser = Repository.Users.FirstOrDefault(p => 
+            string.Compare(p.Email, userName, true) == 0); 
             if (retUser != null) 
             { 
                 CreateCookie(userName); 
