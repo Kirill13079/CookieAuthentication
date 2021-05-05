@@ -1,0 +1,55 @@
+﻿@model CookieAuthentication.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @id = "div2" }))
+{
+    <h1>Create an account</h1>
+    <p>It's free and always will be.</p>
+    @Html.ValidationSummary()
+        <li>
+            <div>
+                @Html.ValidationMessage("Email")
+                @Html.TextBox("Email", Model.Email, new { @placeholder = "Email" })
+            </div>
+        </li>
+        <li>          
+            <div>
+                @Html.ValidationMessage("Password")
+                @Html.Password("Password", Model.Password, new { @placeholder = "Password" })
+            </div>
+        </li>
+        <li>           
+            <div >
+                @Html.ValidationMessage("ConfirmPassword")
+                @Html.Password("ConfirmPassword", Model.ConfirmPassword, new { @placeholder = "Confirm Password" })
+            </div>
+        </li>
+        <li>
+        </li>
+        <li>
+            <label><img src="@Url.Action("Captcha", "Home")" alt="captcha" /> </label>
+            <div>
+                @Html.ValidationMessage("Captcha")
+                @Html.TextBox("Captcha", Model.Captcha, new { @placeholder = "Captcha" })
+            </div>
+        </li>
+
+        <li>
+            <input type="submit" value="Create an account" />
+            @Html.ActionLink("Cancel", "Index", null, null, new { @id = "cancel" })
+        </li>
+ 
+}
+
+
+
+
+
+

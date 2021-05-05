@@ -1,0 +1,29 @@
+﻿@model CookieAuthentication.Models.LoginView
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "div2" }))
+{
+    <h1>Login</h1>
+    <li>
+        
+        <div>
+            @Html.TextBox("Email", Model.Email, new { @placeholder = "Email" })
+            @Html.ValidationMessage("Email")
+        </div>
+    </li>
+    <li>      
+        <div>
+            @Html.Password("Password", Model.Password, new { @placeholder = "Password" })
+            @Html.ValidationMessage("Password")
+        </div>
+    </li>
+    <li>
+        <input type="submit" value="Enter" />
+        @Html.ActionLink("Cancel", "Index", null, null, new { @id = "cancel" })
+    </li>
+
+}
+

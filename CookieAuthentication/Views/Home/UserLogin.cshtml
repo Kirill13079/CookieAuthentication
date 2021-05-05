@@ -1,0 +1,20 @@
+﻿@model CookieAuthentication.Model.Entities.User
+<ul id="login">
+    @if (Model != null)
+    {
+        <li>@Html.ActionLink(@Model.Email, "MyProfile", "Login", null, new { @class = "" })</li>
+
+        <li>@Html.ActionLink("Logout", "Logout", "Login", null, new { @class = "" })</li>
+
+    }
+    else
+    {
+        <li>@Html.ActionLink("Login", "Index", "Login", null, new { @class = "" })</li>
+
+        <li>@Html.ActionLink("Register", "Register", "Home", null, new { @class = "" })</li>
+    }
+</ul>
+
+
+
+
