@@ -5,7 +5,7 @@ ____
 #### Use Automapping   
 Used to convert RegisterViewModel.cs model to User.cs
 #### Use Custom Сaptcha At Registration
-![Alt-текст](captcha.png "Орк")
+![Alt-текст](captcha.png "Cookie")
 #### Use Custom Cookie Authentication
 ```C#
         private const string cookieName = "__AUTH_COOKIE";
